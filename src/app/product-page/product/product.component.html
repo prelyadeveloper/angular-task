@@ -1,3 +1,20 @@
-<p>
-  product works!
-</p>
+<div class="container" style="display: flex;">
+  <div class="col-lg-6">
+      <mat-card>
+        <section *ngIf="product">
+          <div>
+            <p>{{product?.title}}</p>
+
+            <section>
+              <img [src]="product?.img">
+            </section>
+            <p>{{product?.text}}</p>
+          </div>
+        </section>
+      </mat-card>
+    </div>
+    <div class="col-lg-6">
+      <app-feedback-list [feedbacks]="reviews" ></app-feedback-list>
+    </div>
+</div>
+

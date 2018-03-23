@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ProductService } from "../../services/product.service";
+import {FeedbackService} from "../../services/feedback.service";
 
 @Component({
   selector: 'app-product',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  product;
+  reviews;
+  constructor(private prApi: ProductService, private rewApi: FeedbackService) { }
 
   ngOnInit() {
   }
+
+  setProduct(id: number) {
+    this.product = this.prApi.getProduct(id);
+
+    this.reviews = this.rewApi.getReviews(id);
+  }
+
+
+
 
 }

@@ -1,3 +1,6 @@
-<p>
-  feedback-list works!
-</p>
+<h3>Reviews</h3>
+<div *ngFor="let feedback of feedbacks">
+ <p>{{feedback.name}}</p>
+ <p>{{feedback.rate}}</p>
+ <p>{{feedback.text}}</p>
+</div>
