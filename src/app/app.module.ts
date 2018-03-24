@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { ProductPageComponent } from './product-page/product-page.component';
@@ -13,6 +13,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MatMenuModule }  from "@angular/material";
 import {MatCardModule} from "@angular/material";
 import { FeedbackService } from "./services/feedback.service";
+import { RegistrationComponent } from './registration/registration.component';
+import { AuthenticationComponent } from './authentication/authentication.component';
+import {MatInputModule} from '@angular/material';
+import {MatFormFieldModule} from '@angular/material';
+import {MatButtonModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,20 @@ import { FeedbackService } from "./services/feedback.service";
     ProductPageComponent,
     ProductsListComponent,
     ProductComponent,
-    FeedbackListComponent
+    FeedbackListComponent,
+    RegistrationComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
       BrowserAnimationsModule,
       MatMenuModule,
-      MatCardModule
+      MatCardModule,
+      MatFormFieldModule,
+      MatInputModule,
+      MatButtonModule,
+      FormsModule
+
   ],
   providers: [ProductService, FeedbackService],
   bootstrap: [AppComponent]

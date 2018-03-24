@@ -1,0 +1,23 @@
+<div class="container">
+  <mat-card class=" col-lg-3">
+    <form (ngSubmit)="onSubmit(f)" class="example-form" #f="ngForm">
+      <p>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" name="name" ngModel required>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="example-full-width">
+          <input matInput  placeholder="Email"  name="email" ngModel required>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="example-full-width">
+          <input matInput  placeholder="Password"  name="password" ngModel required>
+        </mat-form-field>
+      </p>
+
+      <p><button [disabled]="!f.valid"  type="submit" color="primary" mat-raised-button>Sign up</button></p>
+    </form>
+  </mat-card>
+</div>
